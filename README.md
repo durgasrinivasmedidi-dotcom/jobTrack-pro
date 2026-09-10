@@ -1,39 +1,83 @@
 # JobTrack Pro 🚀
 
-JobTrack Pro is a web-based job application tracking system.
+## Smart Job Application Tracker
 
-## Features
+JobTrack Pro is a web-based Job Application Tracker built using
+Python, Flask, MySQL, HTML5, and CSS3.
+
+It helps users manage their job applications in one place by
+adding, editing, deleting, searching, and filtering applications.
+
+---
+
+## 📌 Features
 
 - Add job applications
-- View applications
-- Edit applications
-- Delete applications
-- Search by company or role
+- View all job applications
+- Edit job applications
+- Delete job applications
+- Search by company or job role
 - Filter applications by status
 - Dashboard statistics
-- MySQL database
-- Responsive design
+- MySQL database integration
+- Responsive web design
+- Secure database configuration using environment variables
 
-## Technologies
+---
 
-- Python
-- Flask
-- MySQL
-- HTML
-- CSS
-- Git
-- GitHub
+## 📊 Dashboard
 
-## Application Status
+The dashboard displays:
+
+- Total Applications
+- Interviews
+- Selected Applications
+- Rejected Applications
+
+---
+
+## 📝 Application Status
+
+JobTrack Pro supports:
 
 - Applied
 - Interview
 - Selected
 - Rejected
 
-## How to Run
+---
 
-### 1. Install dependencies
+## 🛠️ Technologies Used
 
-```bash
-pip install flask mysql-connector-python
+| Technology | Purpose |
+|------------|---------|
+| Python | Backend programming |
+| Flask | Web framework |
+| MySQL | Database |
+| HTML5 | Web page structure |
+| CSS3 | Styling and responsive design |
+| Git | Version control |
+| GitHub | Project hosting |
+
+---
+
+## 📂 Project Structure
+
+```text
+JobTrack-Pro
+│
+├── app.py
+├── README.md
+├── requirements.txt
+├── .gitignore
+│
+├── database
+│   └── database.sql
+│
+├── static
+│   └── style.css
+│
+└── templates
+    ├── index.html
+    ├── add_job.html
+    └── edit_job.html
