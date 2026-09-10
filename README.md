@@ -81,3 +81,24 @@ JobTrack-Pro
     ├── index.html
     ├── add_job.html
     └── edit_job.html
+
+---
+
+## 📸 Screenshots
+
+### JobTrack Pro Dashboard
+
+![JobTrack Pro Dashboard](screenshots/jobtrack-dashboard.png)
+
+---
+
+## 🚀 Future Improvements
+
+- User authentication and login
+- Resume upload
+- Interview reminders
+- Email notifications
+- Charts and analytics
+- Job application deadline reminders
+- Job search API integration
+- Deployment to a cloud platform
