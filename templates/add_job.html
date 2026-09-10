@@ -1,0 +1,149 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Add Job - JobTrack Pro</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Add Job Application</h1>
+
+        <div class="card">
+
+            <form>
+
+                <label>Company Name</label>
+                <input type="text" placeholder="Enter company name">
+
+                <label>Job Role</label>
+                <input type="text" placeholder="Enter job role">
+
+                <label>Application Date</label>
+                <input type="date">
+
+                <label>Status</label>
+
+                <select>
+                    <option>Applied</option>
+                    <option>Interview</option>
+                    <option>Selected</option>
+                    <option>Rejected</option>
+                </select>
+
+                <button type="submit">Save Job</button>
+
+            </form>
+
+            <br>
+
+            <a href="/">← Back to Home</a>
+
+        </div>
+
+    </div>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Job - JobTrack Pro</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Add Job Application</h1>
+
+        <div class="card">
+
+            <form method="POST">
+
+                <!-- Company Name -->
+                <label>Company Name</label>
+
+                <input
+                    type="text"
+                    name="company"
+                    placeholder="Enter company name"
+                    required
+                >
+
+
+                <!-- Job Role -->
+                <label>Job Role</label>
+
+                <input
+                    type="text"
+                    name="role"
+                    placeholder="Enter job role"
+                    required
+                >
+
+
+                <!-- Application Date -->
+                <label>Application Date</label>
+
+                <input
+                    type="date"
+                    name="application_date"
+                    required
+                >
+
+
+                <!-- Status -->
+                <label>Status</label>
+
+                <select name="status" required>
+
+                    <option value="Applied">
+                        Applied
+                    </option>
+
+                    <option value="Interview">
+                        Interview
+                    </option>
+
+                    <option value="Selected">
+                        Selected
+                    </option>
+
+                    <option value="Rejected">
+                        Rejected
+                    </option>
+
+                </select>
+
+
+                <!-- Save Button -->
+                <button type="submit">
+                    Save Job
+                </button>
+
+            </form>
+
+
+            <br>
+
+
+            <!-- Back to Home -->
+            <a href="/">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

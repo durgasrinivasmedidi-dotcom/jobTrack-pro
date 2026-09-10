@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>JobTrack Pro</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>JobTrack Pro</h1>
+
+    <p class="subtitle">
+        Smart Job Application Tracker
+    </p>
+
+    <a href="/add" class="btn">
+        + Add Job Application
+    </a>
+
+
+    <!-- Dashboard -->
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <h3>Total Applications</h3>
+            <p>{{ total }}</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Interviews</h3>
+            <p>{{ interviews }}</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Selected</h3>
+            <p>{{ selected }}</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Rejected</h3>
+            <p>{{ rejected }}</p>
+        </div>
+
+    </div>
+
+
+    <!-- Search -->
+
+    <div class="search-box">
+
+        <form method="GET" action="/">
+
+            <input
+                type="text"
+                name="search"
+                placeholder="Search company or role..."
+                value="{{ search }}"
+            >
+
+            <select name="status">
+
+                <option value="">All Status</option>
+
+                <option value="Applied"
+                    {% if status == "Applied" %}selected{% endif %}>
+                    Applied
+                </option>
+
+                <option value="Interview"
+                    {% if status == "Interview" %}selected{% endif %}>
+                    Interview
+                </option>
+
+                <option value="Selected"
+                    {% if status == "Selected" %}selected{% endif %}>
+                    Selected
+                </option>
+
+                <option value="Rejected"
+                    {% if status == "Rejected" %}selected{% endif %}>
+                    Rejected
+                </option>
+
+            </select>
+
+            <button type="submit">
+                Search
+            </button>
+
+            <a href="/" class="reset-btn">
+                Reset
+            </a>
+
+        </form>
+
+    </div>
+
+
+    <!-- Applications -->
+
+    <div class="card">
+
+        <h2>My Job Applications</h2>
+
+        {% if jobs %}
+
+        <div class="table-container">
+
+            <table>
+
+                <tr>
+                    <th>Company</th>
+                    <th>Role</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+
+                {% for job in jobs %}
+
+                <tr>
+
+                    <td>{{ job.company }}</td>
+
+                    <td>{{ job.role }}</td>
+
+                    <td>{{ job.application_date }}</td>
+
+                    <td>
+                        <span class="status">
+                            {{ job.status }}
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <a href="/edit/{{ job.id }}"
+                           class="edit-btn">
+                            Edit
+                        </a>
+
+                        <a href="/delete/{{ job.id }}"
+                           class="delete-btn"
+                           onclick="return confirm('Delete this job?')">
+                            Delete
+                        </a>
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </table>
+
+        </div>
+
+        {% else %}
+
+        <p>No job applications found.</p>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
